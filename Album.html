@@ -12,8 +12,8 @@
 <body>
     <header>
         <br>
-        <button class="menu-btn" onclick="toggleMenu()">
-            <img class="menu-icon" src="Clone of Gaana Photo & Music/menu.png">
+        <button class="menu-btn" onclick="toggleMenu()" aria-label="Toggle menu">
+            <img class="menu-icon" src="Clone of Gaana Photo & Music/menu.png" alt="Menu icon">
         </button>
 
         <div class="menu" id="menu">
@@ -30,8 +30,7 @@
                 <li><a href="#">Help</a></li>
             </ul>
         </div>
-        <td><img src="Clone of Gaana Photo & Music/gaana2.png" alt="img" height="40%" width="7%"
-                style="margin-left: 20px;">
+        <img class="logo-img" src="Clone of Gaana Photo & Music/gaana2.png" alt="Gaana logo">
             <div class="search-containers">
                 <input type="text" class="search-input" placeholder="Search...">
                 <button class="search-button">Search</button>
@@ -47,46 +46,62 @@
 
     <nav>
         <ul>
-            <div class="dropdown">
-                <a href="index.html">
-                    <button class="dropbtn" style="color: white; width: 80px;">All</button>
-                </a>
-            </div>
-            <div class="dropdown">
-                <a href="Trending Songs.html">
-                    <button class="dropbtn" style="color: white; width: 200px;">Trending Songs</button>
-                </a>
-            </div>
-            <div class="dropdown">
-                <a href="New Songs.html">
-                    <button class="dropbtn" style="color: white;">New Songs</button>
-                </a>
-            </div>
-            <div class="dropdown">
-                <a href="Old Songs.html">
-                    <button class="dropbtn" style="color: white;">Old Songs</button>
-                </a>
-            </div>
-            <div class="dropdown">
-                <a href="Album.html">
-                    <button class="dropbtn" style="color: white;">Album</button>
-                </a>
-            </div>
-            <div class="dropdown">
-                <a href="Radio.html">
-                    <button class="dropbtn" style="color: white;">Radio</button>
-                </a>
-            </div>
-            <div class="dropdown">
-                <a href="Podcast.html">
-                    <button class="dropbtn" style="color: white;">Podcast</button>
-                </a>
-            </div>
-            <div class="dropdown">
-                <a href="My Music.html">
-                    <button class="dropbtn" style="color: white;">My Music</button>
-                </a>
-            </div>
+            <li>
+                <div class="dropdown">
+                    <a href="index.html">
+                        <button class="dropbtn dropbtn-all">All</button>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <a href="Trending Songs.html">
+                        <button class="dropbtn dropbtn-trending">Trending Songs</button>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <a href="New Songs.html">
+                        <button class="dropbtn">New Songs</button>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <a href="Old Songs.html">
+                        <button class="dropbtn">Old Songs</button>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <a href="Album.html">
+                        <button class="dropbtn">Album</button>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <a href="Radio.html">
+                        <button class="dropbtn">Radio</button>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <a href="Podcast.html">
+                        <button class="dropbtn">Podcast</button>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <a href="My Music.html">
+                        <button class="dropbtn">My Music</button>
+                    </a>
+                </div>
+            </li>
         </ul>
     </nav>
     <h3 style="color: #fff; margin: 20px; font-size: 25px;">Album Songs</h3>

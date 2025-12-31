@@ -12,8 +12,8 @@
 <body>
     <header>
         <br>
-        <button class="menu-btn" onclick="toggleMenu()">
-            <img class="menu-icon" src="Clone of Gaana Photo & Music/menu.png">
+        <button class="menu-btn" onclick="toggleMenu()" aria-label="Toggle menu">
+            <img class="menu-icon" src="Clone of Gaana Photo & Music/menu.png" alt="Menu icon">
         </button>
 
         <div class="menu" id="menu">
@@ -31,8 +31,7 @@
             </ul>
         </div>
 
-        <td><img src="Clone of Gaana Photo & Music/gaana2.png" alt="img" height="40%" width="7%"
-                style="margin-left: 20px;">
+        <img class="logo-img" src="Clone of Gaana Photo & Music/gaana2.png" alt="Gaana logo">
             <div class="search-containers">
                 <input type="text" class="search-input" placeholder="Search...">
                 <button class="search-button">Search</button>
@@ -48,74 +47,90 @@
 
     <nav>
         <ul>
-            <div class="dropdown">
-                <a href="index.html">
-                    <button class="dropbtn" style="color: white; width: 80px;">All</button>
-                </a>
-            </div>
-            <div class="dropdown">
-                <a href="Trending Songs.html">
-                    <button class="dropbtn" style="color: white; width: 200px;">Trending Songs</button>
-                </a>
-            </div>
-            <div class="dropdown">
-                <a href="New Songs.html">
-                    <button class="dropbtn" style="color: white;">New Songs</button>
-                </a>
-            </div>
-            <div class="dropdown">
-                <a href="Old Songs.html">
-                    <button class="dropbtn" style="color: white;">Old Songs</button>
-                </a>
-            </div>
-            <div class="dropdown">
-                <a href="Album.html">
-                    <button class="dropbtn" style="color: white;">Album</button>
-                </a>
-            </div>
-            <div class="dropdown">
-                <a href="Radio.html">
-                    <button class="dropbtn" style="color: white;">Radio</button>
-                </a>
-            </div>
-            <div class="dropdown">
-                <a href="Podcast.html">
-                    <button class="dropbtn" style="color: white;">Podcast</button>
-                </a>
-            </div>
-            <div class="dropdown">
-                <a href="My Music.html">
-                    <button class="dropbtn" style="color: white;">My Music</button>
-                </a>
-            </div>
+            <li>
+                <div class="dropdown">
+                    <a href="index.html">
+                        <button class="dropbtn dropbtn-all">All</button>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <a href="Trending Songs.html">
+                        <button class="dropbtn dropbtn-trending">Trending Songs</button>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <a href="New Songs.html">
+                        <button class="dropbtn">New Songs</button>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <a href="Old Songs.html">
+                        <button class="dropbtn">Old Songs</button>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <a href="Album.html">
+                        <button class="dropbtn">Album</button>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <a href="Radio.html">
+                        <button class="dropbtn">Radio</button>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <a href="Podcast.html">
+                        <button class="dropbtn">Podcast</button>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <a href="My Music.html">
+                        <button class="dropbtn">My Music</button>
+                    </a>
+                </div>
+            </li>
         </ul>
     </nav>
-    <h3 style="color: #fff; margin: 20px; font-size: 25px;">Recently Played</h3>
+    <h3 class="section-title">Recently Played</h3>
     <div class="container">
         <div class="song-list">
             <div class="song">
                 <img src="Clone of Gaana Photo & Music/gaadi.jpg" alt="Song 4">
                 <h3>Gaadi Kaali</h3>
                 <p>Neha Kakkar</p>
-                <a href="gaadi.html" style="text-decoration: none;">Play Now</a>
+                <a href="gaadi.html" class="play-link">Play Now</a>
             </div>
             <div class="song">
                 <img src="Clone of Gaana Photo & Music/uddja.webp" alt="Song 5">
                 <h3>Udd Jaa Kaale Kaava (From "Gadar 2")</h3>
                 <p>Udit Narayan</p>
-                <a href="udd.html" style="text-decoration: none;">Play Now</a>
+                <a href="udd.html" class="play-link">Play Now</a>
             </div>
             <div class="song">
                 <img src="Clone of Gaana Photo & Music/kheriyat.jpg" alt="Song 9">
                 <h3>Khairiyat (From "Gadar 2")</h3>
                 <p>Arijit Singh</p>
-                <a href="kheriyat.html" style="text-decoration: none;">Play Now</a>
+                <a href="kheriyat.html" class="play-link">Play Now</a>
             </div>
         </div>
     </div>
     </div>
     <br>
-    <h3 style="color: #fff; margin: 20px; font-size: 25px;">Top Charts</h3>
+    <h3 class="section-title">Top Charts</h3>
     <div class="container">
         <div class="song-list">
             <div class="song">
@@ -172,7 +187,7 @@
     </div>
     </div>
     <br>
-    <h3 style="color: #fff; margin: 20px; font-size: 25px;">Trending Songs</h3>
+    <h3 class="section-title">Trending Songs</h3>
     <div class="container">
         <div class="song-list">
             <div class="song">
@@ -252,7 +267,7 @@
             </div>
         </div>
     </div>
-    <h3 style="color: #fff; margin: 20px; font-size: 25px;">New Songs</h3>
+    <h3 class="section-title">New Songs</h3>
     <div class="container">
         <div class="song-list">
             <div class="song">
@@ -332,7 +347,7 @@
             </div>
         </div>
     </div>
-    <h3 style="color: #fff; margin: 20px; font-size: 25px;">Old Songs</h3>
+    <h3 class="section-title">Old Songs</h3>
     <div class="container">
         <div class="song-list">
             <div class="song">
@@ -412,7 +427,7 @@
             </div>
         </div>
     </div>
-    <h3 style="color: #fff; margin: 20px; font-size: 25px;">Album Songs</h3>
+    <h3 class="section-title">Album Songs</h3>
     <div class="container">
         <div class="song-list">
             <div class="song">
@@ -492,7 +507,7 @@
             </div>
         </div>
     </div>
-    <h3 style="color: #fff; margin: 20px; font-size: 25px;">Popular Gaana Radios</h3>
+    <h3 class="section-title">Popular Gaana Radios</h3>
     <div class="container">
         <div class="song-list">
             <div class="song">
@@ -547,7 +562,7 @@
             </div>
         </div>
     </div>
-    <h3 style="color: #fff; margin: 20px; font-size: 25px;">Artist Radios</h3>
+    <h3 class="section-title">Artist Radios</h3>
     <div class="container">
         <div class="song-list">
             <div class="song">
@@ -602,7 +617,7 @@
             </div>
         </div>
     </div>
-    <h3 style="color: #fff; margin: 20px; font-size: 25px;">Podcast</h3>
+    <h3 class="section-title">Podcast</h3>
     <div class="container">
         <div class="song-list">
             <div class="song">

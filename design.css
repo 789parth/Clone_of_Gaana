@@ -14,6 +14,9 @@ header {
     width: 75%;
     margin-left: 20px;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 nav {
@@ -45,6 +48,15 @@ nav ul li {
     font-size: 17px;
     position: relative;
     margin-top: -8px;
+    color: white;
+}
+
+.dropbtn-all {
+    width: 80px;
+}
+
+.dropbtn-trending {
+    width: 200px;
 }
 
 .dropdown {
@@ -183,6 +195,12 @@ footer {
     margin-left: 28px;
 }
 
+.logo-img {
+    height: 40%;
+    width: 7%;
+    margin-left: 20px;
+}
+
 .container {
     max-width: 1200px;
     margin: 20px;
@@ -286,4 +304,122 @@ footer {
 
 .menu ul li.active {
     background-color: #555;
+}
+
+.section-title {
+    color: #fff;
+    margin: 20px;
+    font-size: 25px;
+}
+
+.play-link {
+    text-decoration: none;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    header {
+        width: 100%;
+        margin-left: 0;
+        padding: 10px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .search-containers {
+        margin: 10px 0;
+        margin-right: 0;
+        order: 2;
+    }
+
+    .search-input {
+        width: 250px;
+    }
+
+    .search-container {
+        margin: 10px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        order: 3;
+    }
+
+    .offer {
+        margin-left: 0;
+        margin-bottom: 10px;
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .plus {
+        margin-left: 10px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .link {
+        margin-left: 10px;
+        font-size: 14px;
+    }
+
+    .logo-container {
+        margin-left: 0;
+        width: 150px;
+        height: 150px;
+        font-size: 16px;
+    }
+
+    .container {
+        margin: 10px;
+        padding: 0 10px;
+    }
+
+    .song-list {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-gap: 20px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-input {
+        width: 200px;
+        font-size: 14px;
+    }
+
+    .search-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .offer, .plus {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .link {
+        font-size: 12px;
+    }
+
+    .song-list {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        grid-gap: 15px;
+    }
+
+    .logo-container {
+        width: 120px;
+        height: 120px;
+        font-size: 14px;
+    }
 }
