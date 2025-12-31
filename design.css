@@ -65,6 +65,11 @@ nav ul li {
     margin: 0 var(--spacing-small);
 }
 
+nav ul li.active .dropbtn {
+    background-color: darkred;
+    font-weight: bold;
+}
+
 .dropbtn {
     background-color: var(--accent-color);
     height: auto;

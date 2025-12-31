@@ -1,6 +1,9 @@
 // Enhanced User Experience Features
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Set active navigation item based on current page
+    setActiveNavItem();
+
     // Lazy loading for images
     const images = document.querySelectorAll('img[data-src]');
     const imageObserver = new IntersectionObserver((entries, observer) => {
@@ -112,3 +115,30 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+// Function to set active navigation item
+function setActiveNavItem() {
+    const currentPath = window.location.pathname;
+    const pageName = currentPath.split('/').pop() || 'index.html';
+
+    const navItems = {
+        'index.html': 'All',
+        'Album.html': 'Album',
+        'My Music.html': 'My Music',
+        'New Songs.html': 'New Songs',
+        'Old Songs.html': 'Old Songs',
+        'Podcast.html': 'Podcast',
+        'Radio.html': 'Radio',
+        'Trending Songs.html': 'Trending Songs'
+    };
+
+    const activeText = navItems[pageName];
+    if (activeText) {
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            if (link.textContent.trim() === activeText) {
+                link.closest('li').classList.add('active');
+            }
+        });
+    }
+}
