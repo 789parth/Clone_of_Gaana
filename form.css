@@ -1,95 +1,142 @@
+/* CSS Variables for Forms */
+:root {
+    --form-primary: #fff;
+    --form-secondary: rgb(35, 35, 35);
+    --form-accent: red;
+    --form-border: #ddd;
+    --form-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --form-radius: 8px;
+    --form-transition: 0.3s ease;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-color: rgb(35, 35, 35);
+    background-color: var(--form-secondary);
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--form-primary);
+    border-radius: var(--form-radius);
+    box-shadow: var(--form-shadow);
+    transition: transform var(--form-transition);
+}
+
+.container:hover {
+    transform: translateY(-5px);
 }
 
 h2 {
     text-align: center;
-    color: #333;
+    color: var(--form-secondary);
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 1.5rem;
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 0.5rem;
     color: #666;
+    font-weight: 500;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-    width: 95%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 2px solid var(--form-border);
+    border-radius: var(--form-radius);
+    box-sizing: border-box;
+    transition: border-color var(--form-transition), box-shadow var(--form-transition);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: var(--form-accent);
+    box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.1);
 }
 
 .error {
-    color: red;
-    font-size: 14px;
-    margin-top: 5px;
+    color: var(--form-accent);
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: block;
 }
 
 button {
     width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    background-color: red;
-    color: #fff;
+    padding: 0.75rem;
+    font-size: 1rem;
+    background-color: var(--form-accent);
+    color: var(--form-primary);
     border: none;
-    border-radius: 5px;
+    border-radius: var(--form-radius);
     cursor: pointer;
+    transition: all var(--form-transition);
+    font-weight: 500;
 }
 
 button:hover {
     background-color: darkred;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 p {
     text-align: center;
-    margin-top: 15px;
+    margin-top: 1.5rem;
+    color: #666;
 }
 
 a {
-    color: #007bff;
+    color: var(--form-accent);
     text-decoration: none;
+    font-weight: 500;
+    transition: color var(--form-transition);
 }
 
 a:hover {
+    color: darkred;
     text-decoration: underline;
 }
 
-/* Responsive Design */
+/* Enhanced Responsive Design */
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     .container {
-        margin: 20px 10px;
-        padding: 15px;
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
     }
 
     input[type="text"],
     input[type="email"],
     input[type="password"] {
-        width: 100%;
-        box-sizing: border-box;
+        padding: 0.625rem;
+        font-size: 0.875rem;
     }
 
     button {
-        width: 100%;
+        padding: 0.625rem;
+        font-size: 0.875rem;
     }
 }

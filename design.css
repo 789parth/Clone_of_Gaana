@@ -1,54 +1,87 @@
+/* CSS Variables for High-Level Responsiveness */
+:root {
+    --primary-color: rgb(35, 35, 35);
+    --accent-color: red;
+    --text-color: #fff;
+    --secondary-bg: #333;
+    --border-radius: 5px;
+    --transition-speed: 0.3s ease;
+    --font-size-base: clamp(14px, 2.5vw, 18px);
+    --font-size-large: clamp(18px, 4vw, 25px);
+    --spacing-small: clamp(5px, 1vw, 10px);
+    --spacing-medium: clamp(10px, 2vw, 20px);
+    --spacing-large: clamp(20px, 4vw, 40px);
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: rgb(35, 35, 35);
+    background-color: var(--primary-color);
     position: relative;
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
 header {
-    background-color: rgb(35, 35, 35);
-    padding: 2px 0;
+    background-color: var(--primary-color);
+    padding: var(--spacing-small) var(--spacing-medium);
     text-align: left;
-    height: 50px;
-    width: 75%;
-    margin-left: 20px;
-    position: relative;
+    height: auto;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: all var(--transition-speed);
 }
 
 nav {
-    background-color: red;
-    color: #fff;
-    padding: 1px 0;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    padding: var(--spacing-small) 0;
     text-align: left;
-    height: 48px;
+    height: auto;
     width: 100%;
     position: relative;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
-    margin-top: 7px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 10px;
+    display: inline-block;
+    margin: 0 var(--spacing-small);
 }
 
 .dropbtn {
-    background-color: red;
-    height: 50px;
-    width: 200px;
-    border: red;
-    font-size: 17px;
+    background-color: var(--accent-color);
+    height: auto;
+    width: auto;
+    border: none;
+    font-size: var(--font-size-base);
     position: relative;
-    margin-top: -8px;
-    color: white;
+    color: var(--text-color);
+    padding: var(--spacing-small) var(--spacing-medium);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all var(--transition-speed);
+}
+
+.dropbtn:hover {
+    background-color: darkred;
+    transform: translateY(-2px);
 }
 
 .dropbtn-all {
@@ -67,31 +100,29 @@ nav ul li {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
+    background-color: var(--secondary-bg);
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    border-radius: var(--border-radius);
+    overflow: hidden;
 }
 
 .dropdown-content a {
-    color: white;
-    background-color: black;
-    padding: 12px 16px;
+    color: var(--text-color);
+    background-color: var(--secondary-bg);
+    padding: var(--spacing-medium);
     text-decoration: none;
     display: block;
+    transition: background-color var(--transition-speed);
 }
 
 .dropdown-content a:hover {
-    background-color: rgb(35, 35, 35);
+    background-color: var(--primary-color);
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
-    background-color: white;
-}
-
-.dropdown:hover .dropbtn {
-    background-color: darkred;
 }
 
 footer {
@@ -117,64 +148,80 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 100px;
-    margin-top: -35px;
+    margin-right: var(--spacing-medium);
 }
 
 .search-input {
-    height: 15px;
-    padding: 10px;
-    width: 420px;
-    font-size: 16px;
+    height: 40px;
+    padding: var(--spacing-small) var(--spacing-medium);
+    width: clamp(200px, 30vw, 400px);
+    font-size: var(--font-size-base);
     border: 1px solid #ccc;
-    border-radius: 20px;
-    margin-right: 10px;
+    border-radius: var(--border-radius);
+    margin-right: var(--spacing-small);
+    transition: border-color var(--transition-speed);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
 }
 
 .search-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: red;
-    color: #fff;
+    padding: var(--spacing-small) var(--spacing-medium);
+    font-size: var(--font-size-base);
+    background-color: var(--accent-color);
+    color: var(--text-color);
     border: none;
-    border-radius: 20px;
+    border-radius: var(--border-radius);
     cursor: pointer;
+    transition: all var(--transition-speed);
 }
 
 .search-button:hover {
     background-color: darkred;
+    transform: scale(1.05);
 }
 
 .plus {
     background-color: white;
     color: black;
     border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    margin-left: 40px;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-small) var(--spacing-medium);
+    margin-left: var(--spacing-medium);
     cursor: pointer;
+    transition: all var(--transition-speed);
 }
 
 .plus:hover {
     background-color: #666;
+    transform: scale(1.05);
 }
 
 .offer {
     background-color: rgb(255, 106, 0);
     color: white;
     border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    margin-left: 200px;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-small) var(--spacing-medium);
+    margin-left: var(--spacing-medium);
     cursor: pointer;
+    transition: all var(--transition-speed);
+}
+
+.offer:hover {
+    background-color: rgb(200, 80, 0);
+    transform: scale(1.05);
 }
 
 .link {
-    color: #fff;
+    color: var(--text-color);
     text-decoration: none;
-    margin-left: 50px;
-    margin-top: 10px;
-    margin-right: -250px;
+    margin-left: var(--spacing-medium);
+    margin-top: var(--spacing-small);
+    transition: color var(--transition-speed);
 }
 
 .link:hover {
@@ -196,45 +243,58 @@ footer {
 }
 
 .logo-img {
-    height: 40%;
-    width: 7%;
-    margin-left: 20px;
+    height: clamp(30px, 8vw, 40px);
+    width: auto;
+    margin-left: var(--spacing-medium);
+    transition: transform var(--transition-speed);
+}
+
+.logo-img:hover {
+    transform: scale(1.1);
 }
 
 .container {
     max-width: 1200px;
-    margin: 20px;
-    padding: 0 20px;
-    margin-left: 50px;
+    margin: var(--spacing-large) auto;
+    padding: 0 var(--spacing-medium);
 }
 
 .song-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 50px;
-    margin-top: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 20vw, 200px), 1fr));
+    grid-gap: var(--spacing-medium);
+    margin-top: var(--spacing-medium);
 }
 
 .song {
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: var(--text-color);
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-speed);
+    cursor: pointer;
+}
+
+.song:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .song img {
     max-width: 100%;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
+    loading: lazy;
 }
 
 .song h3 {
-    margin-top: 10px;
-    font-size: 16px;
+    margin-top: var(--spacing-small);
+    font-size: var(--font-size-base);
+    color: var(--primary-color);
 }
 
 .song p {
     font-size: 14px;
-    margin-top: 5px;
+    margin-top: var(--spacing-small);
     color: #666;
 }
 
@@ -245,33 +305,38 @@ footer {
     border: none;
     cursor: pointer;
     position: relative;
+    padding: var(--spacing-small);
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-speed);
+}
+
+.menu-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .menu-icon {
-    margin-top: -25px;
-    margin-left: -20px;
-    height: 30px;
-    width: 40px;
-    position: relative;
-    color: #fff;
-    font-size: 18px;
+    height: clamp(20px, 5vw, 30px);
+    width: auto;
+    color: var(--text-color);
+    transition: transform var(--transition-speed);
 }
 
-.menu-icon:hover {
-    color: #666;
+.menu-btn:hover .menu-icon {
+    transform: rotate(90deg);
 }
 
 .menu {
     position: fixed;
     top: 0;
-    left: -240px;
-    width: 240px;
-    height: 100%;
-    background-color: #333;
-    transition: left 0.3s ease-in-out;
+    left: -300px;
+    width: clamp(250px, 80vw, 300px);
+    height: 100vh;
+    background-color: var(--secondary-bg);
+    transition: left var(--transition-speed);
     z-index: 999;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
     overflow-y: auto;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
 }
 
 .menu.active {
@@ -280,13 +345,18 @@ footer {
 
 .menu ul {
     list-style-type: none;
-    padding: 0;
+    padding: var(--spacing-large) 0;
     margin: 0;
 }
 
 .menu ul li {
-    padding: 15px 20px;
+    padding: var(--spacing-medium);
     border-bottom: 1px solid #444;
+    transition: background-color var(--transition-speed);
+}
+
+.menu ul li:hover {
+    background-color: var(--primary-color);
 }
 
 .menu ul li:last-child {
@@ -295,131 +365,187 @@ footer {
 
 .menu ul li a {
     text-decoration: none;
-    color: #fff;
+    color: var(--text-color);
+    font-size: var(--font-size-base);
 }
 
 .menu ul li a:hover {
-    color: #666;
+    color: var(--accent-color);
 }
 
 .menu ul li.active {
-    background-color: #555;
+    background-color: var(--accent-color);
 }
 
 .section-title {
-    color: #fff;
-    margin: 20px;
-    font-size: 25px;
+    color: var(--text-color);
+    margin: var(--spacing-large) 0;
+    font-size: var(--font-size-large);
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: var(--spacing-small) auto;
+    border-radius: var(--border-radius);
 }
 
 .play-link {
     text-decoration: none;
+    color: var(--accent-color);
+    font-weight: bold;
+    transition: color var(--transition-speed);
 }
 
-/* Responsive Design */
+.play-link:hover {
+    color: darkred;
+}
 
-@media (max-width: 768px) {
-    header {
-        width: 100%;
-        margin-left: 0;
-        padding: 10px;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+/* Enhanced Responsive Design */
+
+/* Extra Large Screens */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
     }
+    .song-list {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
 
+/* Large Screens */
+@media (max-width: 1199px) and (min-width: 992px) {
+    .song-list {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+}
+
+/* Medium Screens (Tablets) */
+@media (max-width: 991px) and (min-width: 768px) {
+    header {
+        padding: var(--spacing-medium);
+    }
+    nav ul {
+        justify-content: flex-start;
+        overflow-x: auto;
+    }
+    .search-containers {
+        margin-right: var(--spacing-small);
+    }
+    .search-input {
+        width: clamp(150px, 25vw, 300px);
+    }
+    .song-list {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        grid-gap: var(--spacing-small);
+    }
+    .section-title {
+        font-size: clamp(20px, 5vw, 30px);
+    }
+}
+
+/* Small Screens (Large Mobile) */
+@media (max-width: 767px) and (min-width: 576px) {
+    header {
+        flex-direction: column;
+        align-items: stretch;
+        padding: var(--spacing-medium);
+    }
     nav {
         display: none;
     }
-
     .search-containers {
-        margin: 10px 0;
-        margin-right: 0;
+        margin: var(--spacing-small) 0;
         order: 2;
+        width: 100%;
     }
-
     .search-input {
-        width: 250px;
+        width: 70%;
+        margin-right: var(--spacing-small);
     }
-
     .search-container {
-        margin: 10px 0;
+        margin: var(--spacing-small) 0;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         order: 3;
+        width: 100%;
     }
-
     .offer {
         margin-left: 0;
-        margin-bottom: 10px;
+        margin-bottom: var(--spacing-small);
         font-size: 14px;
-        padding: 8px 16px;
+        padding: var(--spacing-small);
     }
-
     .plus {
-        margin-left: 10px;
-        margin-bottom: 10px;
+        margin-left: var(--spacing-small);
+        margin-bottom: var(--spacing-small);
         font-size: 14px;
-        padding: 8px 16px;
+        padding: var(--spacing-small);
     }
-
     .link {
-        margin-left: 10px;
+        margin-left: var(--spacing-small);
         font-size: 14px;
     }
-
-    .logo-container {
+    .logo-img {
         margin-left: 0;
-        width: 150px;
-        height: 150px;
-        font-size: 16px;
+        order: 1;
     }
-
     .container {
-        margin: 10px;
-        padding: 0 10px;
+        margin: var(--spacing-medium) var(--spacing-small);
+        padding: 0 var(--spacing-small);
     }
-
     .song-list {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        grid-gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        grid-gap: var(--spacing-small);
     }
-
-    .menu-btn {
-        display: block;
+    .menu {
+        width: 280px;
     }
 }
 
-@media (max-width: 480px) {
+/* Extra Small Screens (Small Mobile) */
+@media (max-width: 575px) {
+    header {
+        padding: var(--spacing-small);
+    }
     .search-input {
-        width: 200px;
+        width: 60%;
         font-size: 14px;
     }
-
     .search-button {
-        padding: 8px 16px;
+        padding: var(--spacing-small);
         font-size: 14px;
     }
-
     .offer, .plus {
         font-size: 12px;
-        padding: 6px 12px;
+        padding: var(--spacing-small);
+        margin-left: var(--spacing-small);
     }
-
     .link {
         font-size: 12px;
+        margin-left: var(--spacing-small);
     }
-
     .song-list {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-        grid-gap: 15px;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        grid-gap: var(--spacing-small);
     }
-
-    .logo-container {
-        width: 120px;
-        height: 120px;
-        font-size: 14px;
+    .logo-img {
+        height: 30px;
+    }
+    .section-title {
+        font-size: 20px;
+        margin: var(--spacing-medium) 0;
+    }
+    .menu {
+        width: 100vw;
+    }
+    .menu ul li {
+        padding: var(--spacing-medium);
     }
 }
